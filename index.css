@@ -1,72 +1,156 @@
-/* styles.css */
+:root{
+    --color-uno: #1B6F5E;
+    --color-dos: #fedd73;
+    --color-tres: #102032;
+    --color-cuatro: #12443A;
+}
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 16px;
     background-color: #fedd73;
 }
 
-header {
-    background-color: #102032;
-    color: #fedd73;
+* {
+    box-sizing: border-box;
+    margin: 0 ;
+    padding: 0 ;
+    font-family: Raleway, sans-serif;
+  }
+/* MENU PRINCIPAL */
+.titulo {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 5rem;
+    color: var(--color-dos);
+    background-color: var(--color-tres);
+    margin: 0; /* Ajustando el margen */
+    padding: 20px 0; /* AÃ±adiendo relleno para separar del borde */
+  }
+.titulo span{
+    font-size: 2rem;
+    margin: 0%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contenedor{
+    width: 100%;
+    margin: 0 auto;
+}
+.nav-bg{
+    background-color: var(--color-tres);
+    margin-top: 0%;
+
+}
+.navegacion-principal{
+    padding: 1rem;
     display: flex;
-    align-items: center;
-    padding: 3%;
-}
-
-.logo {
-    max-width: 200px;
-    margin-right: 20px;
-}
-
-nav ul {
-    list-style-type: none;
-    /*margin: 0;*/
-     /*padding: 0;
-     display: flex;
-     margin-left: auto;  Esto alinea los elementos hacia la derecha */
-     /*padding: 1rem;*/
-     display: flex;
-     flex-direction: row;
+    flex-direction:row;
     justify-content: space-between;
-     width: 70rem;
-     margin: 0 auto;
- }
- 
- nav ul li {
-     margin: 0 10px;
- }
- 
- nav ul li a {
-     color: #fedd73;
-     text-decoration: none;
-     font-size: 1.5rem;
- }
-main {
-    padding: 20px;
+   
+}
+.navegacion-principal a{
+    color: var(--color-dos);
+    text-decoration: none;
+    font-size: 20PX;
 }
 
 .sobre-mi {
     display: flex;
-    align-items: center;
+    align-items:center;
+    flex-wrap: wrap;
+    margin: 20px; /* Agregar margen para darle espacio en todos los dispositivos */
 }
 
 .foto-perfil {
-    max-width: 500px;
+    max-width: 450px;
     border-radius: 10%;
     margin-right: 20px;
     margin-left: 150px;
     margin-top: 30px;
 }
-
-.texto-sobre-mi {
+/* Estilos para los elementos <h1> dentro de la clase .texto-sobre-mi */
+.texto-sobre-mi h1 {
+    /* Define la familia de fuentes para el texto */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* Define el ancho máximo del elemento */
+    max-width: 800px;
+    /* Define el tamaño de la fuente */
+    font-size: 25px;
+    /* Define el color del texto utilizando una variable CSS */
+    color: var(--color-tres);
+    /* Establece el margen izquierdo */
     margin-left: 150px;
-    margin-right: 80PX;
-    max-width:800px;
-    font-size: large;
-    text-align: justify;
+    /* Establece el margen derecho */
+    margin-right: 100px;
 }
+
+/* Estilos para los elementos <p> dentro de la clase .texto-sobre-mi */
+.texto-sobre-mi p {
+    /* Define la familia de fuentes para el texto */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* Establece el margen izquierdo */
+    margin-left: 150px;
+    /* Establece el margen derecho */
+    margin-right: 100px;
+    /* Define el ancho máximo del elemento */
+    max-width: 600px;
+    /* Define el tamaño de la fuente */
+    font-size: medium;
+    /* Justifica el texto */
+    text-align: justify;
+    /* Define el color del texto utilizando una variable CSS */
+    color: var(--color-tres);
+}
+
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 1024px) {
+    .foto-perfil {
+        margin-left: 50px;
+        margin-right: 10px;
+        max-width: 300px; /* Reducción del tamaño de la imagen */
+    }
+
+    .texto-sobre-mi {
+        margin-left: 50px;
+        margin-right: 20px;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sobre-mi {
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        align-items: center; /* Centra los elementos en el eje horizontal */
+        margin: 100px;
+    }
+
+    .foto-perfil {
+        margin: 20px 0; /* Añadir márgenes verticales */
+        max-width: 80%; /* Ajusta la imagen al 80% del ancho del contenedor */
+    }
+
+    .texto-sobre-mi {
+        margin: 0 20px; /* Márgenes laterales pequeños */
+        max-width: 100%; /* Ajusta el texto al 100% del ancho del contenedor */
+    }
+}
+
+@media (max-width: 480px) {
+    .foto-perfil {
+        max-width: 100%; /* Ajusta la imagen al 100% del ancho del contenedor */
+        margin: 10px 0; /* Márgenes verticales pequeños */
+    }
+
+    .texto-sobre-mi {
+        font-size: medium; /* Disminuye el tamaño de la fuente para pantallas más pequeñas */
+        margin: 0 10px; /* Márgenes laterales pequeños */
+    }
+}
+
 .redes-sociales {
     margin-top: 10px;
     padding: 10px 160px;
