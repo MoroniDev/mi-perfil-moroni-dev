@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Cursos y Certificados</title>
+    <link rel="stylesheet" href="cursos.css">
+</head>
+<body>
+    <header>
+        <img src="imagenes/logo.png" alt="Logo" class="logo" >
+        <nav>
+            <ul>
+                <li><a href="index.html">Sobre Mí</a></li>
+                <li><a href="cursos.html">Cursos y Certificados</a></li>
+                <li><a href="experiencia.html">Experiencia Laboral</a></li>
+                <li><a href="proyecto.html">Proyectos Personales</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="sliders-container">
+            <div class="slider" id="slider1">
+                <h2>CURSOS TERMINADOS</h2>
+                <img src="imagenes/s1.png" alt="Photo 1">
+                <img src="imagenes/s2.png" alt="Photo 2">
+                <img src="imagenes/s3.png" alt="Photo 3">
+            </div>
+            <div class="slider" id="slider2">
+                <h2>CURSOS POR TERMINAR</h2>
+                <img src="imagenes/s4.png" alt="Photo 4">
+                <img src="imagenes/s5.png" alt="Photo 5">
+                <img src="imagenes/s6.png" alt="Photo 6">
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const sliders = document.querySelectorAll('.slider');
+                sliders.forEach(slider => {
+                    let index = 0;
+                    const images = slider.querySelectorAll('img');
+                    images[index].style.display = 'block'; // Muestra la primera imagen inmediatamente
+                    setInterval(() => {
+                        images[index].style.display = 'none';
+                        index = (index + 1) % images.length;
+                        images[index].style.display = 'block';
+                    }, 5000); // Cambia cada 5 segundos
+                });
+            });
+        </script>
+        <div class="catalogo">
+            <h1>Mis Certificados</h1>
+            <div class="productos">
+                <div class="producto">
+                    <img src="imagenes/curso1.png" alt="curso 1">
+                    <h2>PYTHON</h2>
+                    <a href="python.html" class="button-link"><button>Mas Informacion</button></a>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/curso2.png" alt="curso 2">
+                    <h2>INTRODUCCION A REDES</h2>
+                    <a href="introRedes.html" class="button-link"><button>Mas Informacion</button></a>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/curso3.png" alt="curso 3">
+                    <h2>SISTEMAS OPERATIVOS</h2>
+                    <a href="SOperativos.html" class="button-link"><button>Mas Informacion</button></a>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/curso4.png" alt="curso 4">
+                    <h2>JUNIOR EN CYBERSEGURIDAD</h2>
+                    <a href="juniorCyber.html" class="button-link"><button>Mas Informacion</button></a>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/curso5.png" alt="curso 5">
+                    <h2>PROGRAMACION EN C</h2>
+                    <a href="programacionc.html" class="button-link"><button>Mas Informacion</button></a>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/curso6.png" alt="curso 6">
+                    <h2>FUNDAMENTOS DE SCRUM</h2>
+                    <a href="scrum.html" class="button-link"><button>Mas Informacion</button></a>
+                </div>
+                
+    </main>
+
+
+</body>
+</html>

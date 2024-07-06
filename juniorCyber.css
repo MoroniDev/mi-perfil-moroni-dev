@@ -1,0 +1,67 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fedd73;
+}
+
+header {
+    background-color: #102032;
+    color: #fedd73;
+    display: flex;
+    align-items: center;
+    padding: 3%;
+}
+
+.logo {
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    /*margin: 0;*/
+     /*padding: 0;
+     display: flex;
+     margin-left: auto;  Esto alinea los elementos hacia la derecha */
+     /*padding: 1rem;*/
+     display: flex;
+     flex-direction: row;
+    justify-content: space-between;
+     width: 70rem;
+     margin: 0 auto;
+ }
+ 
+ nav ul li {
+     margin: 0 10px;
+ }
+ 
+ nav ul li a {
+     color: #fedd73;
+     text-decoration: none;
+     font-size: 1.5rem;
+ }
+ main {
+    padding: 20px;
+}
+
+.curso-cyberseguridad {
+    display: flex;
+    align-items: center;
+}
+
+.curso-4{
+    max-width: 700px;
+
+    margin-right: 20px;
+    margin-left: 90px;
+    margin-top: 30px;
+}
+
+.texto-sobre-curso {
+    margin-left: 60px;
+    margin-right: 80PX;
+    max-width:800px;
+}

@@ -1,0 +1,180 @@
+/* cursos.css */
+:root{
+    --color-uno: #1B6F5E;
+    --color-dos: #fedd73;
+    --color-tres: #102032;
+    --color-cuatro: #12443A;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fedd73;
+}
+
+header {
+    background-color: #102032;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 3%;
+}
+
+.logo {
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    /*margin: 0;*/
+     /*padding: 0;
+     display: flex;
+     margin-left: auto;  Esto alinea los elementos hacia la derecha */
+     /*padding: 1rem;*/
+     display: flex;
+     flex-direction: row;
+    justify-content: space-between;
+     width: 70rem;
+     margin: 0 auto;
+ }
+ 
+ nav ul li {
+     margin: 0 10px;
+ }
+ 
+ nav ul li a {
+     color: #fedd73;
+     text-decoration: none;
+     font-size: 1.5rem;
+ }
+
+main {
+    padding: 20px;
+}
+.navbar input[type="text"] {
+    padding: 8px; /* Espaciado interno del campo de texto */
+    border-radius: 100px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde del campo de texto */
+    width: 100%; /* Ancho del campo de texto en relación al contenedor padre flex */
+    max-width: 600px; /* Tamaño máximo del campo de texto */
+    margin: 0 20px; /* Margen a los lados del campo de texto */
+    flex: 1 1 auto; /* Permite que el campo se ajuste dinámicamente */
+}
+.navbar nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.navbar nav a:hover {
+    text-decoration: underline;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons img {
+    width: 30px;
+    height: 40px;
+    margin-left: 15px;
+    background-color: #1B0032;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 50px;
+}
+
+.sliders-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.slider {
+    width: 45%;
+    overflow: hidden;
+    border: 2px solid #fedd73;
+    position: relative;
+    margin-left: 30px;
+}
+
+.slider img {
+    width: 70%;
+    display: none;
+    border-radius: 20px;
+}
+
+.slider img:first-child {
+    display: block;
+}
+
+.catalogo {
+    padding: 20px;
+}
+
+.catalogo h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.producto {
+    background-color: var(--color-tres);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 250px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.producto h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: var(--color-dos);
+}
+
+.producto p {
+    margin: 5px 0;
+    color: var(--color-dos);
+}
+
+.producto button {
+    background-color: var(--color-uno); /* Tono morado oscuro */
+    color: var(--color-dos);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.producto button:hover {
+    background-color: #12443A; /* Tono morado más claro */
+}
