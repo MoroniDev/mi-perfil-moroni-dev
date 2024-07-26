@@ -3,59 +3,125 @@
     --color-dos: #fedd73;
     --color-tres: #102032;
     --color-cuatro: #12443A;
+    --blanco: #FFFFFF;
 }
 
+/*  Globales  */
 html{
     font-size: 62.5%;
+    box-sizing: border-box;/* hack para box model*/
+}
+*, *:before, *:after{
+    box-sizing: inherit;
 }
 body{
-    font-size: 16px;
-    background-color: #fedd73;
+    font-size: 16px; /* 1rem = 10px*/
+    font-family: 'krub', sans-serif;
+    background-image: linear-gradient(to top,var(--color-cuatro) 0%,var(--color-tres) 100%);
 }
-
-* {
-    box-sizing: border-box;
-    margin: 0 ;
-    padding: 0 ;
-    font-family: Raleway, sans-serif;
-  }
-/* MENU PRINCIPAL */
-.titulo {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-    font-size: 5rem;
-    color: var(--color-dos);
-    background-color: var(--color-tres);
-    margin: 0; /* Ajustando el margen */
-    padding: 20px 0; /* AÃ±adiendo relleno para separar del borde */
-  }
-.titulo span{
-    font-size: 2rem;
-    margin: 0%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
 .contenedor{
-    width: 100%;
+    max-width: 120rem;
     margin: 0 auto;
 }
+.boton{/*como hacer un buen boton*/
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+@media (min-width:480px ) {
+    .boton{
+        width: auto;
+    }
+}
+
+.sombra{
+    -webkit-box-shadow: 0px, 5px,15px,0px rgba(112,112,112,0.48);
+    -moz-box-shadow: 0px, 5px,15px,0px rgba(112,112,112,0.48);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/*  Tipografia  */
+h1{
+    font-size: 3.8rem;
+    color: #fedd73;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+h1,h2,h3 {
+    text-align: center;
+}
+/* titulos */
+.titulo span{
+    font-size: 2rem;
+}
+
+/* navegacion principal */
 .nav-bg{
     background-color: var(--color-tres);
-    margin-top: 0%;
-
 }
 .navegacion-principal{
-    padding: 1rem;
     display: flex;
-    flex-direction:row;
-    justify-content: space-between;
-   
+    flex-direction: column;
+      
 }
+/*telefono
+@media (min-width: 480px) {
+    .navegacion-principal{
+        flex-direction: row;
+    }
+}*/
+@media (min-width: 768px) {/*tablet*/
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+/*laptop
+@media (min-width: 1140px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}*/
 .navegacion-principal a{
+    display: block;
+    text-align: center;
     color: var(--color-dos);
     text-decoration: none;
-    font-size: 20PX;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
 }
+
+.navegacion-principal a:hover{
+    background-color: var(--color-dos);
+    color: var(--color-tres);
+}
+
+
+
+
+
+
+
+
+
+
 
 .sobre-mi {
     display: flex;
@@ -65,109 +131,233 @@ body{
 }
 
 .foto-perfil {
-    max-width: 450px;
+    max-width: 100%; /* Se ajustará al contenedor */
     border-radius: 10%;
     margin-right: 20px;
     margin-left: 150px;
     margin-top: 30px;
 }
+
+@media (max-width: 480px) {
+    .sobre-mi {
+        flex-direction: column; /* Coloca los elementos en columna en pantallas pequeñas */
+        align-items: center;
+    }
+    .foto-perfil {
+        width: 80%; /* Ajuste de ancho para pantallas pequeñas */
+        margin-left: 0; /* Centro la imagen */
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .sobre-mi {
+        flex-direction: column; /* Coloca los elementos en columna en pantallas medianas */
+        align-items: center;
+    }
+    .foto-perfil {
+        width: 70%; /* Ajuste de ancho para pantallas medianas */
+        margin-left: 0; /* Centro la imagen */
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1139px) {
+    .sobre-mi {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .foto-perfil {
+        width: 450px; /* Ajuste de ancho para pantallas más grandes */
+        margin-left: 20px; /* Ajuste del margen para pantallas más grandes */
+    }
+}
+
+@media (min-width: 1140px) {
+    .sobre-mi {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .foto-perfil {
+        width: 450px; /* Mantener el ancho en pantallas muy grandes */
+        margin-left: 150px; /* Mantener el margen para pantallas muy grandes */
+    }
+}
 /* Estilos para los elementos <h1> dentro de la clase .texto-sobre-mi */
 .texto-sobre-mi h1 {
-    /* Define la familia de fuentes para el texto */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    /* Define el ancho máximo del elemento */
     max-width: 800px;
-    /* Define el tamaño de la fuente */
     font-size: 25px;
-    /* Define el color del texto utilizando una variable CSS */
-    color: var(--color-tres);
-    /* Establece el margen izquierdo */
+    color: var(--color-dos);
     margin-left: 150px;
-    /* Establece el margen derecho */
     margin-right: 100px;
 }
 
 /* Estilos para los elementos <p> dentro de la clase .texto-sobre-mi */
 .texto-sobre-mi p {
-    /* Define la familia de fuentes para el texto */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    /* Establece el margen izquierdo */
     margin-left: 150px;
-    /* Establece el margen derecho */
     margin-right: 100px;
-    /* Define el ancho máximo del elemento */
     max-width: 600px;
-    /* Define el tamaño de la fuente */
     font-size: medium;
-    /* Justifica el texto */
     text-align: justify;
-    /* Define el color del texto utilizando una variable CSS */
     color: var(--color-tres);
 }
 
-
-/* Media queries para pantallas más pequeñas */
-@media (max-width: 1024px) {
-    .foto-perfil {
-        margin-left: 50px;
-        margin-right: 10px;
-        max-width: 300px; /* Reducción del tamaño de la imagen */
-    }
-
-    .texto-sobre-mi {
-        margin-left: 50px;
-        margin-right: 20px;
-        max-width: 600px;
-    }
-}
-
-@media (max-width: 768px) {
-    .sobre-mi {
-        flex-direction: column; /* Cambia la dirección del flex a columna */
-        align-items: center; /* Centra los elementos en el eje horizontal */
-        margin: 100px;
-    }
-
-    .foto-perfil {
-        margin: 20px 0; /* Añadir márgenes verticales */
-        max-width: 80%; /* Ajusta la imagen al 80% del ancho del contenedor */
-    }
-
-    .texto-sobre-mi {
-        margin: 0 20px; /* Márgenes laterales pequeños */
-        max-width: 100%; /* Ajusta el texto al 100% del ancho del contenedor */
-    }
-}
-
 @media (max-width: 480px) {
-    .foto-perfil {
-        max-width: 100%; /* Ajusta la imagen al 100% del ancho del contenedor */
-        margin: 10px 0; /* Márgenes verticales pequeños */
+    .texto-sobre-mi h1, .texto-sobre-mi p {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 18px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        color: #fedd73;
     }
-
-    .texto-sobre-mi {
-        font-size: medium; /* Disminuye el tamaño de la fuente para pantallas más pequeñas */
-        margin: 0 10px; /* Márgenes laterales pequeños */
+    .texto-sobre-mi p {
+        max-width: 90%; /* Ajuste el ancho para pantallas pequeñas */
     }
 }
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .texto-sobre-mi h1, .texto-sobre-mi p {
+        margin-left: 30px;
+        margin-right: 30px;
+        font-size: 20px; /* Ajuste el tamaño de la fuente para pantallas medianas */
+        color: #fedd73;
+    }
+    .texto-sobre-mi p {
+        max-width: 80%; /* Ajuste el ancho para pantallas medianas */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1139px) {
+    .texto-sobre-mi h1 {
+        margin-left: 100px;
+        margin-right: 50px;
+        font-size: 22px; /* Ajuste el tamaño de la fuente para pantallas grandes */
+        color: #fedd73;
+    }
+    .texto-sobre-mi p {
+        margin-left: 100px;
+        margin-right: 50px;
+        font-size: medium;
+        max-width: 700px; /* Ajuste el ancho para pantallas grandes */
+        color: #fedd73;
+    }
+}
+
+@media (min-width: 1140px) {
+    .texto-sobre-mi h1, .texto-sobre-mi p {
+        margin-left: 150px;
+        margin-right: 100px;
+        font-size: 25px; /* Mantener el tamaño de la fuente para pantallas muy grandes */
+        color: var(--color-dos);
+    }
+    .texto-sobre-mi p {
+        max-width: 600px; /* Mantener el ancho para pantallas muy grandes */
+        color: var(--color-dos);
+    }
+}
+
+
 
 .redes-sociales {
     margin-top: 10px;
     padding: 10px 160px;
-    
 }
 
 .redes-sociales h3 {
     margin-bottom: 10px;
 }
+
 .redes-sociales a img {
     max-width: 5rem;
 }
-.foto-redes{
-    max-width: 1400px;
+
+.foto-redes {
+    max-width: 100%; /* Ajusta la imagen al 100% del contenedor */
     margin-left: 50px;
     margin-top: 100px;
     margin-bottom: 100px;
-   border-radius: 20px;
+    border-radius: 20px;
+}
+
+@media (max-width: 480px) {
+    .redes-sociales {
+        padding: 10px 20px; /* Reduce el padding para pantallas pequeñas */
+    }
+
+    .redes-sociales a img {
+        max-width: 3rem; /* Reduce el tamaño de las imágenes en pantallas pequeñas */
+    }
+
+    .foto-redes {
+        margin-left: 10px; /* Reduce el margen izquierdo en pantallas pequeñas */
+        margin-top: 50px; /* Reduce el margen superior en pantallas pequeñas */
+        margin-bottom: 50px; /* Reduce el margen inferior en pantallas pequeñas */
+    }
+    .redes-sociales h3{
+        color: #fedd73;
+        font-size: 2rem;
+}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .redes-sociales {
+        padding: 10px 40px; /* Ajusta el padding para pantallas medianas */
+    }
+
+    .redes-sociales a img {
+        max-width: 4rem; /* Ajusta el tamaño de las imágenes en pantallas medianas */
+    }
+
+    .foto-redes {
+        margin-left: 20px; /* Ajusta el margen izquierdo en pantallas medianas */
+        margin-top: 70px; /* Ajusta el margen superior en pantallas medianas */
+        margin-bottom: 70px; /* Ajusta el margen inferior en pantallas medianas */
+    }
+    .redes-sociales h3{
+        color: #fedd73;
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1139px) {
+    .redes-sociales {
+        padding: 10px 80px; /* Ajusta el padding para pantallas grandes */
+    }
+
+    .redes-sociales a img {
+        max-width: 5rem; /* Mantiene el tamaño de las imágenes en pantallas grandes */
+    }
+
+    .foto-redes {
+        margin-left: 30px; /* Ajusta el margen izquierdo en pantallas grandes */
+        margin-top: 80px; /* Ajusta el margen superior en pantallas grandes */
+        margin-bottom: 80px; /* Ajusta el margen inferior en pantallas grandes */
+    }
+    .redes-sociales h3{
+        color: #fedd73;
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1140px) {
+    .redes-sociales {
+        padding: 10px 160px; /* Mantiene el padding original para pantallas muy grandes */
+    }
+
+    .redes-sociales a img {
+        max-width: 5rem; /* Mantiene el tamaño de las imágenes para pantallas muy grandes */
+    }
+
+    .foto-redes {
+        max-width: 1400px; /* Mantiene el ancho máximo de la imagen */
+        margin-left: 50px; /* Mantiene el margen izquierdo original */
+        margin-top: 100px; /* Mantiene el margen superior original */
+        margin-bottom: 100px; /* Mantiene el margen inferior original */
+    }
+    .redes-sociales h3{
+        color: #fedd73;
+        font-size: 3rem;
+    }
 }
 
