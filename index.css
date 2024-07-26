@@ -116,13 +116,6 @@ h1,h2,h3 {
 
 
 
-
-
-
-
-
-
-
 .sobre-mi {
     display: flex;
     align-items:center;
@@ -137,6 +130,14 @@ h1,h2,h3 {
     margin-left: 150px;
     margin-top: 30px;
 }
+.sombra-perfil{
+    -webkit-box-shadow: 0px, 5px,15px,0px rgba(223, 194, 4, 0.48);
+    -moz-box-shadow: 0px, 5px,15px,0px rgba(223, 194, 4, 0.48);
+    box-shadow: 0px 5px 15px 0px rgba(223, 194, 4, 0.48);
+    background-color: var(--color-tres);
+    padding: 2rem;
+    border-radius: 1rem;
+}
 
 @media (max-width: 480px) {
     .sobre-mi {
@@ -147,6 +148,7 @@ h1,h2,h3 {
         width: 80%; /* Ajuste de ancho para pantallas pequeñas */
         margin-left: 0; /* Centro la imagen */
         margin-top: 20px;
+
     }
 }
 
@@ -316,7 +318,7 @@ h1,h2,h3 {
     }
     .redes-sociales h3{
         color: #fedd73;
-        font-size: 3rem;
+        font-size: 5rem;
     }
 }
 
@@ -360,4 +362,3 @@ h1,h2,h3 {
         font-size: 3rem;
     }
 }
-
