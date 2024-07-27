@@ -1,48 +1,117 @@
-/* styles.css */
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fedd73;
+:root{
+    --color-uno: #1B6F5E;
+    --color-dos: #fedd73;
+    --color-tres: #102032;
+    --color-cuatro: #12443A;
+    --blanco: #FFFFFF;
 }
 
-header {
-    background-color: #102032;
+/*  Globales  */
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;/* hack para box model*/
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+body{
+    font-size: 16px; /* 1rem = 10px*/
+    font-family: 'krub', sans-serif;
+    background-image: linear-gradient(to top,var(--color-cuatro) 0%,var(--color-tres) 100%);
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.boton{/*como hacer un buen boton*/
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+@media (min-width:480px ) {
+    .boton{
+        width: auto;
+    }
+}
+
+.sombra{
+    -webkit-box-shadow: 0px, 5px,15px,0px rgba(112,112,112,0.48);
+    -moz-box-shadow: 0px, 5px,15px,0px rgba(112,112,112,0.48);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/*  Tipografia  */
+h1{
+    font-size: 3.8rem;
     color: #fedd73;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+h1,h2,h3 {
+    text-align: center;
+}
+/* titulos */
+.titulo span{
+    font-size: 2rem;
+}
+
+/* navegacion principal */
+.nav-bg{
+    background-color: var(--color-tres);
+}
+.navegacion-principal{
     display: flex;
-    align-items: center;
-    padding: 3%;
+    flex-direction: column;
+      
+}
+/*telefono
+@media (min-width: 480px) {
+    .navegacion-principal{
+        flex-direction: row;
+    }
+}*/
+@media (min-width: 768px) {/*tablet*/
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+/*laptop
+@media (min-width: 1140px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}*/
+.navegacion-principal a{
+    display: block;
+    text-align: center;
+    color: var(--color-dos);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
 }
 
-.logo {
-    max-width: 200px;
-    margin-right: 20px;
+.navegacion-principal a:hover{
+    background-color: var(--color-dos);
+    color: var(--color-tres);
 }
-
-nav ul {
-    list-style-type: none;
-    /*margin: 0;*/
-     /*padding: 0;
-     display: flex;
-     margin-left: auto;  Esto alinea los elementos hacia la derecha */
-     /*padding: 1rem;*/
-     display: flex;
-     flex-direction: row;
-    justify-content: space-between;
-     width: 70rem;
-     margin: 0 auto;
- }
- 
- nav ul li {
-     margin: 0 10px;
- }
- 
- nav ul li a {
-     color: #fedd73;
-     text-decoration: none;
-     font-size: 1.5rem;
- }
  main {
     padding: 20px;
 }
@@ -50,18 +119,89 @@ nav ul {
 .curso-sistemas {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas más pequeñas */
 }
 
-.curso-3{
-    max-width: 600px;
+.curso-3 {
+    max-width: 700px;
     margin-right: 20px;
-    margin-left: 80px;
-    
+    margin-left: 90px;
+    margin-top: 30px;
+}
+
+.curso-3 h1 {
+    color: var(--color-dos);
 }
 
 .texto-sobre-curso {
     margin-left: 60px;
-    margin-right: 80PX;
-    max-width:800px;
+    margin-right: 80px; /* Corrige el error de mayúsculas en 'PX' */
+    max-width: 800px;
     text-align: justify;
+    font-size: large;
+    color: var(--color-dos);
+}
+
+@media (max-width: 480px) {
+    .curso-3 {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 20px;
+        max-width: 100%; /* Ajuste el ancho máximo para pantallas pequeñas */
+    }
+    
+    .texto-sobre-curso {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: medium; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        max-width: 100%; /* Ajuste el ancho máximo para pantallas pequeñas */
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .curso-3{
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 25px;
+        max-width: 90%; /* Ajuste el ancho máximo para pantallas medianas */
+    }
+    
+    .texto-sobre-curso {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: large; /* Ajuste el tamaño de la fuente para pantallas medianas */
+        max-width: 90%; /* Ajuste el ancho máximo para pantallas medianas */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1139px) {
+    .curso-3 {
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 30px;
+        max-width: 80%; /* Ajuste el ancho máximo para pantallas grandes */
+    }
+    
+    .texto-sobre-curso {
+        margin-left: 40px;
+        margin-right: 40px;
+        font-size: large; /* Mantiene el tamaño de la fuente para pantallas grandes */
+        max-width: 80%; /* Ajuste el ancho máximo para pantallas grandes */
+    }
+}
+
+@media (min-width: 1140px) {
+    .curso-3 {
+        margin-left: 90px;
+        margin-right: 20px;
+        margin-top: 30px;
+        max-width: 700px; /* Mantiene el ancho máximo original */
+    }
+    
+    .texto-sobre-curso {
+        margin-left: 60px;
+        margin-right: 80px;
+        font-size: large; /* Mantiene el tamaño de la fuente original */
+        max-width: 800px; /* Mantiene el ancho máximo original */
+    }
 }
