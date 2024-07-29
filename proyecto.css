@@ -113,3 +113,61 @@ h1,h2,h3 {
     color: var(--color-tres);
 }
 
+
+.catalogo {
+    padding: 20px;
+}
+
+.catalogo h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-dos);
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.producto {
+    background-color: var(--color-dos);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 250px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.producto h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: var(--color-tres);
+}
+
+.producto p {
+    margin: 5px 0;
+    color: var(--color-tres);
+}
+
+.producto button {
+    background-color: var(--color-tres); /* Tono morado oscuro */
+    color: var(--color-dos);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.producto button:hover {
+    background-color: #12443A; /* Tono morado más claro */
+    color: var(--color-dos);
+}
